@@ -6,9 +6,10 @@ new Chart(ctx, {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
     datasets: [
       {
-        label: "# of Votes",
+        label: "Price",
         data: [12, 19, 3, 5, 2, 3],
         borderWidth: 1,
+        backgroundColor: ["red", "blue", "yellow", "purple", "orange"],
       },
     ],
   },
