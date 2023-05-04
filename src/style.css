@@ -1,4 +1,1 @@
-#myChart {
-  width: 1000px !important;
-  height: auto !important;
-}
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
