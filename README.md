@@ -3,7 +3,7 @@
 
 # Project description
 
-This app will allow users to determine and observe whether to raise or lower the price of the food (Mohinga - traditional food of Burmese people) during specific times of the year in a line chart as well as checking the end of the year revenue and profits.
+This app will allow users to determine and observe whether to raise or lower the price of the food called "Mohinga" (traditional food of Burmese people) during specific times of the year in a line chart as well as checking the end of the year revenue and profits.
 
 
 ## Project specifications
