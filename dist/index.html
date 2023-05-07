@@ -29,75 +29,41 @@
 				</div>
 			</div>
 			<div class="row m-3">
-				<form class="col-lg-8 mx-auto">
-					<div class="row my-3">
-						<div class="col-lg-3">
-							<label for="startYear" class="col-form-label fw-bold">Starting year:</label>
+				<div class="col-lg-8 mx-auto">
+					<form>
+						<div class="my-4 d-flex flex-wrap">
+							<label for="startYear" class="fw-bold me-3">Starting year:</label>
+							<input id="startYear" name="startYear" type="text" class="flex-grow-1">
 						</div>
-						<div class="col-lg-9">
-							<input id="startYear" name="startYear" class="form-control" type="text">
+						<div class="my-4 d-flex flex-wrap">
+							<label for="capital" class="fw-bold me-3">Starting capital:</label>
+							<input id="capital" name="capital" type="text" class="flex-grow-1">
 						</div>
-					</div>
-					<div class="row my-3">
-						<div class="col-lg-3">
-							<label for="startCapital" class="col-form-label fw-bold">Starting capital:</label>
-						</div>
-						<div class="col-lg-9">
-							<input id="startCapital" name="startCapital" class="form-control" type="text">
-						</div>
-					</div>
-					<div class="row my-3">
-						<div class="col">
-							<div class="row">
-								<div class="col fw-bold">Peak selling period:</div>
+						<div class="my-4">
+							<label class="fw-bold">Peak selling period:</label>
+							<div class="my-3 d-flex flex-wrap">
+								<label for="startDate" class="fst-italic me-3">Start date:</label>
+								<input id="startDate" name="startDate" type="date" class="flex-grow-1">
 							</div>
-							<div class="row my-3">
-								<div class="col-lg-3">
-									<label for="startDate" class="col-form-label fst-italic">Start date:</label>
-								</div>
-								<div class="col-lg-9">
-									<input id="startDate" name="startDate" class="form-control" type="date">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-3">
-									<label for="endDate" class="col-form-label fst-italic">End date:</label>
-								</div>
-								<div class="col-lg-9">
-									<input id="endDate" name="endDate" class="form-control" type="date">
-								</div>
+							<div class="my-3 d-flex flex-wrap">
+								<label for="endDate" class="fst-italic me-3">End date:</label>
+								<input id="endDate" name="endDate" type="date" class="flex-grow-1">
 							</div>
 						</div>
-					</div>
-					<div class="row my-3">
-						<div class="col-lg-3">
-							<label for="retailPrice" class="col-form-label fw-bold">Retail price:</label>
+						<div class="my-4 d-flex flex-wrap">
+							<label for="retailPrice" class="fw-bold me-3">Retail price:</label>
+							<input id="retailPrice" name="retailPrice" type="text" class="flex-grow-1">
 						</div>
-						<div class="col-lg-9">
-							<input id="retailPrice" name="retailPrice" class="form-control" type="text">
+						<div class="my-4">
+							<label class="col-form-label fw-bold me-3">Financial crisis:</label>
+							<input id="yes-btn" name="crisis" type="radio" value="yes">
+							<label for="yes-btn">Yes</label>
+							<input id="no-btn" name="crisis" type="radio" value="no">
+							<label for="no-btn">No</label>
 						</div>
-					</div>
-					<div class="row my-3">
-						<div class="col-lg-3">
-							<label class="col-form-label fw-bold">Financial crisis:</label>
-						</div>
-						<div class="col-lg-9 my-auto">
-							<div>
-								<input id="yes-btn" name="crisis" type="radio">
-								<label for="yes-btn">Yes</label>
-								<input id="no-btn" name="crisis" type="radio">
-								<label for="no-btn">No</label>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col mb-3">
-							<button class="btn btn-dark col-12" type="submit">
-								Calculate
-							</button>
-						</div>
-					</div>
-				</form>
+						<button class="btn btn-dark w-100" type="submit">Calculate</button>
+					</form>
+				</div>
 			</div>
 			<div class="row m-3">
 				<div class="col-lg-8 mx-auto mt-5">
