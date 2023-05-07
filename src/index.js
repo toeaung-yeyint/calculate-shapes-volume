@@ -12,7 +12,7 @@ new Chart(ctx, {
 			"June",
 			"July",
 			"Aug",
-			"Sep",
+			"Sept",
 			"Nov",
 			"Dec",
 		],
@@ -36,14 +36,6 @@ new Chart(ctx, {
 		},
 		scales: {
 			y: {
-				title: {
-					display: true,
-					text: "Price in AUD",
-					font: {
-						style: "italic",
-						weight: "bold",
-					},
-				},
 				beginAtZero: true,
 			},
 		},
@@ -51,9 +43,9 @@ new Chart(ctx, {
 			// add chart title
 			title: {
 				display: true,
-				text: "Price Chart",
+				text: "Price Chart for the year 2023",
 				font: {
-					size: 25,
+					size: 16,
 					weight: "bold",
 				},
 			},

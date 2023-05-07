@@ -10,7 +10,7 @@
 		<script defer="" src="/index.975ef6c8.js"></script>
 	</head>
 	<body>
-		<nav class="nav bg-success justify-content-between px-2 py-1">
+		<nav class="nav bg-dark justify-content-between px-2 py-1">
 			<a class="nav-link text-white fs-4" href="#">Home</a>
 			<a class="nav-link text-white justify-content-center fs-4" href="#">Contact me</a>
 		</nav>
@@ -31,52 +31,70 @@
 			<div class="row m-3">
 				<div class="col-lg-8 mx-auto">
 					<form>
-						<div class="my-4 d-flex flex-wrap">
-							<label for="startYear" class="fw-bold me-3">Starting year:</label>
-							<input id="startYear" name="startYear" type="text" class="flex-grow-1">
+						<div class="my-4 d-flex flex-row flex-wrap">
+							<label for="startYear" class="fw-bold me-2">Year:</label>
+							<input id="startYear" name="startYear" type="text" class="flex-grow-1" placeholder="e.g. 2023" pattern="[0-9]+">
 						</div>
-						<div class="my-4 d-flex flex-wrap">
-							<label for="capital" class="fw-bold me-3">Starting capital:</label>
-							<input id="capital" name="capital" type="text" class="flex-grow-1">
+						<div class="my-4 d-flex flex-column flex-wrap">
+							<label class="fw-bold">Peak selling period</label>
+							<div class="d-flex my-3">
+								<label for="startMonth" class="fst-italic">Start month:</label>
+								<select name="startMonth" id="startMonth" class="flex-grow-1 ms-2">
+									<option value="jan">January</option>
+									<option value="feb">February</option>
+									<option value="march">March</option>
+									<option value="april">April</option>
+									<option value="may">May</option>
+									<option value="june">June</option>
+									<option value="july">July</option>
+									<option value="march">August</option>
+									<option value="sept">September</option>
+									<option value="oct">October</option>
+									<option value="nov">November</option>
+									<option value="dec">December</option>
+								</select>
+							</div>
+							<div class="d-flex">
+								<label for="endMonth" class="fst-italic">End month:</label>
+								<select name="endMonth" id="endMonth" class="flex-grow-1 ms-2">
+									<option value="jan">January</option>
+									<option value="feb">February</option>
+									<option value="march">March</option>
+									<option value="april">April</option>
+									<option value="may">May</option>
+									<option value="june">June</option>
+									<option value="july">July</option>
+									<option value="march">August</option>
+									<option value="sept">September</option>
+									<option value="oct">October</option>
+									<option value="nov">November</option>
+									<option value="dec">December</option>
+								</select>
+							</div>
+						</div>
+						<div class="my-4 d-flex flex-row flex-wrap">
+							<label for="retailPrice" class="fw-bold me-2">Retail price per unit (AUD):</label>
+							<input id="retailPrice" name="retailPrice" type="text" class="flex-grow-1" placeholder="e.g. 10" pattern="[0-9]+">
 						</div>
 						<div class="my-4">
-							<label class="fw-bold">Peak selling period:</label>
-							<div class="my-3 d-flex flex-wrap">
-								<label for="startDate" class="fst-italic me-3">Start date:</label>
-								<input id="startDate" name="startDate" type="date" class="flex-grow-1">
-							</div>
-							<div class="my-3 d-flex flex-wrap">
-								<label for="endDate" class="fst-italic me-3">End date:</label>
-								<input id="endDate" name="endDate" type="date" class="flex-grow-1">
-							</div>
-						</div>
-						<div class="my-4 d-flex flex-wrap">
-							<label for="retailPrice" class="fw-bold me-3">Retail price:</label>
-							<input id="retailPrice" name="retailPrice" type="text" class="flex-grow-1">
-						</div>
-						<div class="my-4">
-							<label class="col-form-label fw-bold me-3">Financial crisis:</label>
+							<label class="col-form-label fw-bold me-2">Financial crisis:</label>
 							<input id="yes-btn" name="crisis" type="radio" value="yes">
 							<label for="yes-btn">Yes</label>
 							<input id="no-btn" name="crisis" type="radio" value="no">
 							<label for="no-btn">No</label>
 						</div>
-						<button class="btn btn-dark w-100" type="submit">Calculate</button>
+						<button class="btn btn-primary w-100" type="submit">
+							Calculate
+						</button>
 					</form>
 				</div>
 			</div>
-			<div class="row m-3 hidden">
+			<div class="row m-3">
 				<div class="col-lg-8 mx-auto mt-5">
-					<div class="row mb-4">
-						<div class="col">
-							<canvas id="myChart" class="mb-5"></canvas>
-							<p class="fw-bold">Revenue in this year is:</p>
-							<p class="fw-bold">Profit in this year is:</p>
-						</div>
-					</div>
 					<div class="row">
 						<div class="col">
-							<button class="btn btn-dark col-12" type="submit">
+							<canvas id="myChart" class="mb-4"></canvas>
+							<button class="btn btn-primary col-12" type="submit">
 								New calculation
 							</button>
 						</div>
