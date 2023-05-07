@@ -12033,6 +12033,8 @@ textarea.form-control-lg {
   }
 }
 
-
+.hidden {
+  display: none;
+}
 
 /*# sourceMappingURL=index.2cdaf7bc.css.map */
