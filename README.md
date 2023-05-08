@@ -19,4 +19,5 @@ This app will suggest users when to raise or lower a unit price of the food (Moh
 - Vanilla JavaScript
 - Bootstrap (https://getbootstrap.com/)
 - Parcel (https://parceljs.org/)
+- Snackbar (https://github.com/andreruffert/snackbar)
 - Chart js (https://www.chartjs.org/docs/latest/)
