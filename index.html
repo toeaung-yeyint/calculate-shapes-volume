@@ -23,10 +23,13 @@
             raise-or-drop
           </h1>
           <p>
-            This app will allow users to determine whether to raise or lower the
-            price of the food (Mohinga - traditional food of Burmese people)
-            during specific times of the year in a line chart as well as
-            checking the end of the year revenue and profits.
+            This app will suggest users when to raise or lower the price of the
+            food (Mohinga - traditional food of Burmese people) during specific
+            times of the year based on the following factors: peak selling
+            period (20% increase only during the specific period), new financial
+            year (5% increase starting from July every year), whether there is a
+            financial crisis (10% increase for the whole year), as well as
+            displaying the prices in a line chart.
           </p>
         </div>
       </div>
@@ -53,7 +56,6 @@
                   name="startMonth"
                   id="startMonth"
                   class="flex-grow-1 ms-2"
-                  required
                 >
                   <option value="">-</option>
                   <option value="jan">January</option>
@@ -72,12 +74,7 @@
               </div>
               <div class="d-flex">
                 <label for="endMonth" class="fst-italic">End month:</label>
-                <select
-                  name="endMonth"
-                  id="endMonth"
-                  class="flex-grow-1 ms-2"
-                  required
-                >
+                <select name="endMonth" id="endMonth" class="flex-grow-1 ms-2">
                   <option value="">-</option>
                   <option value="jan">January</option>
                   <option value="feb">February</option>
@@ -86,7 +83,7 @@
                   <option value="may">May</option>
                   <option value="june">June</option>
                   <option value="july">July</option>
-                  <option value="march">August</option>
+                  <option value="aug">August</option>
                   <option value="sept">September</option>
                   <option value="oct">October</option>
                   <option value="nov">November</option>

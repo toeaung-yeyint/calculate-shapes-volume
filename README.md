@@ -3,8 +3,7 @@
 
 # Project description
 
-This app will allow users to determine and observe whether to raise or lower the price of the food called "Mohinga" (traditional food of Burmese people) during specific times of the year in a line chart as well as checking the end of the year revenue and profits.
-
+This app will suggest users when to raise or lower the price of the food (Mohinga - traditional food of Burmese people) during specific times of the year based on the following factors: peak selling period (20% increase only during the specific period), new financial year (5% increase starting from July every year), whether there is a financial crisis (10% increase for the whole year), as well as displaying the prices in a line chart.
 
 ## Project specifications
 
@@ -15,8 +14,8 @@ This app will allow users to determine and observe whether to raise or lower the
 - If a user clicks on the “Rest” button, the result section and values in the input fields will be clear.
 
 ### Tools used & Credits:
+
 - Vanilla JavaScript
 - Bootstrap (https://getbootstrap.com/)
 - Parcel (https://parceljs.org/)
 - Chart js (https://www.chartjs.org/docs/latest/)
-

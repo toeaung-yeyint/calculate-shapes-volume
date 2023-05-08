@@ -1,5 +1,12 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/snackbar/dist/snackbar.css";
 
 .hidden {
-	display: none;
+  display: none;
+}
+
+.snackbar {
+  position: static;
+  margin-top: 50px;
+  width: 100%;
 }

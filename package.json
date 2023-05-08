@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "parcel": "^2.8.3"
+    "parcel": "^2.8.3",
+    "snackbar": "^1.1.0"
   }
 }

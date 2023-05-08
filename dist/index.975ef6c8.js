@@ -557,67 +557,314 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"8lqZg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _snackbar = require("snackbar");
+var _snackbarDefault = parcelHelpers.interopDefault(_snackbar);
+(0, _snackbarDefault.default).duration = 5000;
 const year = document.querySelector("#startYear");
-document.querySelector(".calculate").addEventListener("click", (e)=>{
+const startMonth = document.querySelector("#startMonth");
+const endMonth = document.querySelector("#endMonth");
+const retailPrice = document.querySelector("#retailPrice");
+const financialCrisis = document.querySelector("#yes-btn");
+const form = document.querySelector(".form");
+const formSection = document.querySelector(".form-section");
+const chartSection = document.querySelector(".chart-section");
+const priceChart = document.querySelector("#priceChart");
+const newCalculation = document.querySelector(".new-calculation");
+let lineChart;
+const labels = [
+    "Jan",
+    "Feb",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sept",
+    "Nov",
+    "Dec"
+];
+let startMonthInNumber;
+let endMonthInNumber;
+const startMonthtoNumber = (month)=>{
+    switch(month){
+        case "jan":
+            startMonthInNumber = 0;
+            break;
+        case "feb":
+            startMonthInNumber = 1;
+            break;
+        case "march":
+            startMonthInNumber = 2;
+            break;
+        case "april":
+            startMonthInNumber = 3;
+            break;
+        case "may":
+            startMonthInNumber = 4;
+            break;
+        case "june":
+            startMonthInNumber = 5;
+            break;
+        case "july":
+            startMonthInNumber = 6;
+            break;
+        case "aug":
+            startMonthInNumber = 7;
+            break;
+        case "sept":
+            startMonthInNumber = 8;
+            break;
+        case "oct":
+            startMonthInNumber = 9;
+            break;
+        case "nov":
+            startMonthInNumber = 10;
+            break;
+        case "dec":
+            startMonthInNumber = 11;
+            break;
+        default:
+            startMonthInNumber = "";
+            break;
+    }
+};
+const endMonthtoNumber = (month)=>{
+    switch(month){
+        case "jan":
+            endMonthInNumber = 0;
+            break;
+        case "feb":
+            endMonthInNumber = 1;
+            break;
+        case "march":
+            endMonthInNumber = 2;
+            break;
+        case "april":
+            endMonthInNumber = 3;
+            break;
+        case "may":
+            endMonthInNumber = 4;
+            break;
+        case "june":
+            endMonthInNumber = 5;
+            break;
+        case "july":
+            endMonthInNumber = 6;
+            break;
+        case "aug":
+            endMonthInNumber = 7;
+            break;
+        case "sept":
+            endMonthInNumber = 8;
+            break;
+        case "oct":
+            endMonthInNumber = 9;
+            break;
+        case "nov":
+            endMonthInNumber = 10;
+            break;
+        case "dec":
+            endMonthInNumber = 11;
+            break;
+        default:
+            endMonthInNumber = "";
+            break;
+    }
+};
+form.addEventListener("submit", (e)=>{
     e.preventDefault();
-    console.log(year.value);
-}); // const ctx = document.getElementById("myChart");
- // new Chart(ctx, {
- //   type: "line",
- //   data: {
- //     labels: [
- //       "Jan",
- //       "Feb",
- //       "March",
- //       "April",
- //       "May",
- //       "June",
- //       "July",
- //       "Aug",
- //       "Sept",
- //       "Nov",
- //       "Dec",
- //     ],
- //     datasets: [
- //       {
- //         label: "Price",
- //         data: [12, 19, 3, 5, 2, 3, 11, 4, 7, 9, 10, 5],
- //         borderWidth: 1,
- //       },
- //     ],
- //   },
- //   options: {
- //     animations: {
- //       tension: {
- //         duration: 1000,
- //         easing: "linear",
- //         from: 1,
- //         to: 0,
- //         loop: true,
- //       },
- //     },
- //     scales: {
- //       y: {
- //         beginAtZero: true,
- //       },
- //     },
- //     plugins: {
- //       // add chart title
- //       title: {
- //         display: true,
- //         text: "Price Chart for the year 2023",
- //         font: {
- //           size: 16,
- //           weight: "bold",
- //         },
- //       },
- //       // hide dataset label
- //       legend: {
- //         display: false,
- //       },
- //     },
- //   },
- // });
+    startMonthtoNumber(startMonth.value);
+    endMonthtoNumber(endMonth.value);
+    if (endMonthInNumber < startMonthInNumber) {
+        document.querySelector(".form").append(document.querySelector(".snackbar"));
+        (0, _snackbarDefault.default).show("Peak selling period for the end month must not be earlier than the start month. Please try again!");
+    } else {
+        let prices = [
+            Number.parseInt(retailPrice.value),
+            Number.parseInt(retailPrice.value),
+            Number.parseInt(retailPrice.value),
+            Number.parseInt(retailPrice.value),
+            Number.parseInt(retailPrice.value),
+            Number.parseInt(retailPrice.value),
+            Number.parseInt(retailPrice.value),
+            Number.parseInt(retailPrice.value),
+            Number.parseInt(retailPrice.value),
+            Number.parseInt(retailPrice.value),
+            Number.parseInt(retailPrice.value),
+            Number.parseInt(retailPrice.value)
+        ];
+        for(let i = 0; i < prices.length; i++){
+            if (typeof startMonthInNumber === "number" && i >= startMonthInNumber && i <= endMonthInNumber) prices[i] = prices[i] + prices[i] * 0.2;
+            if (financialCrisis.checked) prices[i] = prices[i] + prices[i] * 0.1;
+            if (i >= 6 && i <= 11) prices[i] = prices[i] + prices[i] * 0.05;
+        }
+        console.log(prices);
+        formSection.classList.add("hidden");
+        chartSection.classList.remove("hidden");
+        lineChart = new Chart(priceChart, {
+            type: "line",
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: "Unit price",
+                        data: prices
+                    }
+                ]
+            },
+            options: {
+                animations: {
+                    tension: {
+                        duration: 1000,
+                        easing: "linear",
+                        from: 1,
+                        to: 0,
+                        loop: true
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: `Price Chart for the year ${year.value}`,
+                        font: {
+                            size: 16,
+                            weight: "bold"
+                        }
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+        year.value = "";
+        startMonth.value = "";
+        endMonth.value = "";
+        retailPrice.value = "";
+        financialCrisis.checked = false;
+    }
+});
+newCalculation.addEventListener("click", ()=>{
+    formSection.classList.remove("hidden");
+    lineChart.destroy();
+    chartSection.classList.add("hidden");
+});
+
+},{"snackbar":"nwWOh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"nwWOh":[function(require,module,exports) {
+"use strict";
+var _snackbar = require("63d27fa49496a4cf");
+var _snackbar2 = _interopRequireDefault(_snackbar);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+var instance = void 0;
+function snackbar() {
+    if (!instance) instance = new _snackbar2.default();
+    return instance;
+}
+module.exports = snackbar();
+
+},{"63d27fa49496a4cf":"hGJCx"}],"hGJCx":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _createClass = function() {
+    function defineProperties(target, props) {
+        for(var i = 0; i < props.length; i++){
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }
+    return function(Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) defineProperties(Constructor, staticProps);
+        return Constructor;
+    };
+}();
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
+}
+var Snackbar = function() {
+    function Snackbar() {
+        _classCallCheck(this, Snackbar);
+        this.view = document.body.appendChild(document.createElement("div"));
+        this.view.classList.add("snackbar");
+        this.isActive = false;
+        this.queue = [];
+        this.gap = 250;
+        this.duration = 5000;
+    }
+    _createClass(Snackbar, [
+        {
+            key: "show",
+            value: function show(message) {
+                var _this = this;
+                if (this.isActive) {
+                    this.queue.push(message);
+                    return;
+                }
+                this.isActive = true;
+                this.view.textContent = message;
+                this.view.classList.add("snackbar--visible");
+                this.queue.shift();
+                setTimeout(function() {
+                    return _this.hide();
+                }, this.duration);
+            }
+        },
+        {
+            key: "hide",
+            value: function hide() {
+                var _this2 = this;
+                this.isActive = false;
+                this.view.classList.remove("snackbar--visible");
+                if (this.queue.length) setTimeout(function() {
+                    return _this2.show(_this2.queue[0]);
+                }, this.gap);
+            }
+        }
+    ]);
+    return Snackbar;
+}();
+exports.default = Snackbar;
+
+},{}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["jC2qd","8lqZg"], "8lqZg", "parcelRequire94c2")
 
