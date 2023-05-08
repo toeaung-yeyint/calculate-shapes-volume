@@ -582,6 +582,7 @@ const labels = [
     "July",
     "Aug",
     "Sept",
+    "Oct",
     "Nov",
     "Dec"
 ];
@@ -754,7 +755,7 @@ newCalculation.addEventListener("click", ()=>{
 
 },{"snackbar":"nwWOh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"nwWOh":[function(require,module,exports) {
 "use strict";
-var _snackbar = require("63d27fa49496a4cf");
+var _snackbar = require("a3db404bc01d7fe2");
 var _snackbar2 = _interopRequireDefault(_snackbar);
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -768,7 +769,7 @@ function snackbar() {
 }
 module.exports = snackbar();
 
-},{"63d27fa49496a4cf":"hGJCx"}],"hGJCx":[function(require,module,exports) {
+},{"a3db404bc01d7fe2":"hGJCx"}],"hGJCx":[function(require,module,exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
