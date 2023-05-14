@@ -14,7 +14,7 @@ This app will advise users on when to increase or decrease a unit price of the f
 - Users can start a new calculation by clicking on the "New calculation" button.
 - If a user clicks on the "New calculation" button, the chart will be gone and a user will go back to form.
 
-### Tools used & Credits:
+### Tools used & credits:
 
 - Vanilla JavaScript
 - Bootstrap (https://getbootstrap.com/)
