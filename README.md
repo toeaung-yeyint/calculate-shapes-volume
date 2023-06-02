@@ -16,8 +16,10 @@ This app will advise users on when to increase or decrease a unit price of the f
 
 ### Tools used & credits:
 
-- Vanilla JavaScript
+- HTML
+- CSS
 - Bootstrap (https://getbootstrap.com/)
-- Parcel (https://parceljs.org/)
-- Snackbar (https://github.com/andreruffert/snackbar)
+- Vanilla JavaScript
 - Chart js (https://www.chartjs.org/docs/latest/)
+- Snackbar (https://github.com/andreruffert/snackbar)
+- Parcel (https://parceljs.org/)
