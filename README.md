@@ -3,7 +3,7 @@
 
 # Project description
 
-This app will advise users on when to increase or decrease a unit price of the food (Mohinga, a traditional food of the Burmese people) for months of the year based on the factors that include the following: peak selling period (20% increase only during the specific period), new financial year (5% increase starting from July every year), whether there is a financial crisis (10% increase for the entire year), as well as showing suggested prices in a line chart.
+This app provides advice to users on when to increase or decrease the unit price of Mohinga based on various factors, including the peak selling period, the new financial year, and the presence of a financial crisis. Additionally, it generates a line chart to display suggested prices.
 
 ## Project specifications
 
