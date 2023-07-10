@@ -1,4 +1,4 @@
-**Link to the app:** https://toeaung-yeyint.github.io/raise-or-drop/
+**Link to the app:** https://toeaung-yeyint.github.io/smart-pricing/
 <br/>
 
 # Project description
