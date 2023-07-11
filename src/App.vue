@@ -1,7 +1,9 @@
 <template>
-	<div class="container">
-		<h1>smart-pricing</h1>
-		<p>
+	<div class="max-w-screen-lg my-28 mx-auto px-6">
+		<h1 class="uppercase text-center mb-12 text-3xl font-bold">
+			smart-pricing
+		</h1>
+		<p class="mb-5">
 			<strong>Built using: </strong>Vue (Options API), HTML, CSS, JavaScript,
 			Firebase, Snackbar.js, Vite
 		</p>
@@ -21,15 +23,4 @@
 
 <script setup></script>
 
-<style scoped>
-h1 {
-	text-align: center;
-	margin-bottom: 50px;
-	text-transform: uppercase;
-}
-.container {
-	max-width: 1000px;
-	margin: 100px auto;
-	padding: 20px;
-}
-</style>
+<style scoped></style>
