@@ -4,8 +4,8 @@
 			smart-pricing
 		</h1>
 		<p class="mb-5">
-			<strong>Built using: </strong>Vue (Options API), HTML, CSS, JavaScript,
-			Firebase, Snackbar.js, Vite
+			<strong>Built using: </strong>Vue (Composition API), HTML, Tailwind,
+			JavaScript, Chart.js, Vite
 		</p>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue
