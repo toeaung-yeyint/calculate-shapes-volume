@@ -1,7 +1,7 @@
 <template>
 	<div class="max-w-screen-lg my-28 mx-auto px-6">
 		<h1 class="uppercase text-center mb-12 text-3xl font-bold">
-			smart-pricing
+			calculate-volume-shapes
 		</h1>
 		<p class="mb-5">
 			<strong>Built using: </strong>Vue (Composition API), HTML, Tailwind,
