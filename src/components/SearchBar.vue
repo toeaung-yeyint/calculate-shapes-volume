@@ -1,5 +1,6 @@
 <template>
 	<form
+		@submit.prevent
 		@input="$emit('inputProvided', (payload = searchShape))"
 		class="flex items-center border-2 mt-20 mb-12 focus-within:border-black"
 	>
