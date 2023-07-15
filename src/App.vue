@@ -18,7 +18,7 @@
 			porta ex ut scelerisque posuere. Vivamus a urna diam. Sed in lectus est.
 			Vestibulum dignissim dignissim tellus vel consequat.
 		</p>
-		<SearchBar @inputProvided="savedSearchTeam" />
+		<SearchBar @inputProvided="saveSearchShape" />
 		<CardContainer>
 			<Card
 				v-for="(shape, index) in filteredShape"
@@ -35,6 +35,7 @@ import CardContainer from "./components/CardContainer.vue";
 import Card from "./components/Card.vue";
 import SearchBar from "./components/SearchBar.vue";
 import { ref, computed } from "vue";
+
 import cone from "./assets/cone.jpg";
 import cube from "./assets/cube.jpg";
 import cuboid from "./assets/cuboid.jpg";
@@ -86,7 +87,7 @@ const shapes = ref([
 
 const searchShape = ref("");
 
-const savedSearchTeam = (payload) => {
+const saveSearchShape = (payload) => {
 	searchShape.value = payload;
 };
 
