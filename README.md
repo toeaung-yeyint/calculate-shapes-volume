@@ -14,4 +14,4 @@ porta ex ut scelerisque posuere. Vivamus a urna diam. Sed in lectus est.
 Vestibulum dignissim dignissim tellus vel consequat.
 
 <br/>
-Built using: Vue (Composition API), HTML, Tailwind, JavaScript, Chart.js, Vite
+Built using: Vue (Composition API), Vue Router, HTML, Tailwind, JavaScript, Vite
