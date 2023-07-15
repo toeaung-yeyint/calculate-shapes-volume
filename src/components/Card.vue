@@ -10,5 +10,12 @@
 </template>
 
 <script setup>
-defineProps(["image", "label"]);
+defineProps({
+	image: {
+		type: String,
+	},
+	label: {
+		type: String,
+	},
+});
 </script>
