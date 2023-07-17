@@ -1,10 +1,23 @@
 <template>
-  <h1>shape: {{ shape.label }}</h1>
-  <img :src="shape.image" alt="" />
+  <IntroSection>
+    <div class="mt-20 flex items-center gap-x-8">
+      <img :src="shape.image" alt="" class="w-4/12 border-2" />
+      <div class="w-8/12 self-start">
+        <h1 class="font-bold text-xl my-4">{{ shape.label }}</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius harum
+          quia porro cumque culpa? Quae ipsa voluptate magni deserunt dolore
+          quibusdam officia possimus similique natus illo, eligendi et deleniti
+          dolores.
+        </p>
+      </div>
+    </div>
+  </IntroSection>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
+import IntroSection from "../components/IntroSection.vue";
 
 import cone from "../assets/cone.jpg";
 import cube from "../assets/cube.jpg";
