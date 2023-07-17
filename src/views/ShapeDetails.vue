@@ -1,24 +1,31 @@
 <template>
 	<IntroSection>
 		<div class="mt-20 flex items-center gap-x-8">
-			<div class="w-4/12">
+			<div class="w-5/12">
 				<RouterLink to="/">
-					<button
-						class="w-full bg-blue-500 mb-4 p-2 text-white rounded hover:bg-blue-600"
-					>
+					<button class="w-full mb-4 p-1 rounded bg-gray-200 hover:bg-gray-300">
 						Back to menu
 					</button>
 				</RouterLink>
 				<img :src="shape.image" alt="" class="border-2 w-full" />
 			</div>
-			<div class="w-8/12 self-start">
-				<h1 class="font-bold text-xl my-4">{{ shape.label }}</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius harum
-					quia porro cumque culpa? Quae ipsa voluptate magni deserunt dolore
-					quibusdam officia possimus similique natus illo, eligendi et deleniti
-					dolores.
-				</p>
+			<div class="w-7/12 flex flex-col max-w-xs mx-auto">
+				<h1 class="font-bold text-xl text-center mb-4">
+					Volume of a {{ shape.label }}
+				</h1>
+				<div class="flex flex-col">
+					<label for="radius">Radius:</label>
+					<input id="radius" type="text" class="border-2 flex-grow mt-2 my-4" />
+				</div>
+				<div class="flex flex-col">
+					<label for="height">Height:</label>
+					<input id="height" type="text" class="border-2 flex-grow mt-2 my-8" />
+				</div>
+				<button
+					class="w-full bg-blue-500 mb-4 p-1 text-white rounded hover:bg-blue-600"
+				>
+					Calculate
+				</button>
 			</div>
 		</div>
 	</IntroSection>
