@@ -15,10 +15,10 @@
           class="border-2 w-full h-full object-contain"
         />
       </div>
-      <div class="w-1/2 flex flex-col max-w-xs mx-auto">
-        <h1 class="font-bold text-xl text-center mb-4">
-          Volume of a {{ shape.label }}
-        </h1>
+      <form
+        @submit.prevent="calculateVolume"
+        class="w-1/2 flex flex-col max-w-xs mx-auto"
+      >
         <div
           v-for="(property, index) in shape.properties"
           :key="index"
@@ -29,17 +29,17 @@
             :id="property"
             type="number"
             class="border-2 flex-grow w-9/12"
-            :v-model="property"
+            ref="itemRefs"
           />
         </div>
         <div class="flex items-center mb-4">
           <label for="unit" class="w-3/12">Unit:</label>
-          <select class="border-2" name="unit" id="unit">
+          <select class="border-2" id="unit" v-model="unit">
             <option value="">-</option>
-            <option value="in">in³</option>
-            <option value="ft">ft³</option>
-            <option value="cm">cm³</option>
-            <option value="m">m³</option>
+            <option value="in³">in</option>
+            <option value="ft³">ft</option>
+            <option value="cm³">cm</option>
+            <option value="m³">m</option>
           </select>
         </div>
         <button
@@ -47,7 +47,8 @@
         >
           Calculate
         </button>
-      </div>
+        <p class="font-bold text-md mb-4">Volume: {{ volume }} {{ unit }}</p>
+      </form>
     </div>
   </IntroSection>
 </template>
@@ -79,7 +80,7 @@ const shapes = ref([
     id: 2,
     label: "Cube",
     image: cube,
-    properties: ["Edge(a)"],
+    properties: ["edge"],
   },
   {
     id: 3,
@@ -118,11 +119,30 @@ const shapes = ref([
   },
 ]);
 
+const itemRefs = ref([]);
+const unit = ref("");
+const volume = ref("");
+
 onMounted(() => {
   shape.value = shapes.value.find(
     (shape) => shape.id === Number.parseInt(props.id)
   );
 });
+
+const calculateVolume = () => {
+  switch (props.id) {
+    case "1":
+      const [height, radius] = itemRefs.value;
+      volume.value = (Math.PI * radius.value ** 2 * height.value) / 3;
+      break;
+    case "2":
+      const [edge] = itemRefs.value;
+      volume.value = edge.value ** 3;
+      break;
+    default:
+      console.log("Invalid ID");
+  }
+};
 </script>
 
 <style></style>
