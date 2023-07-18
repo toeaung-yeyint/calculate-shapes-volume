@@ -29,6 +29,7 @@
             :id="property"
             type="number"
             class="border-2 flex-grow w-9/12"
+            :v-model="property"
           />
         </div>
         <div class="flex items-center mb-4">
