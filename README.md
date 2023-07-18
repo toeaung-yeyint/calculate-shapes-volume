@@ -1,4 +1,4 @@
-**Link to the app:** https://toeaung-yeyint.github.io/calculate-volume-shapes/
+**Link to the app:** https://toeaung-yeyint.github.io/calculate-shapes-volume/
 <br/>
 
 # Project description
