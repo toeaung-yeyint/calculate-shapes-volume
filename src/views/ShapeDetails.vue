@@ -2,25 +2,29 @@
 	<IntroSection>
 		<RouterLink to="/">
 			<button
-				class="mt-20 w-full mb-12 py-2 rounded bg-gray-200 hover:bg-gray-300"
+				class="mt-20 w-full mb-12 py-2 rounded bg-gray-300 hover:bg-gray-400 text-white"
 			>
-				Back to menu
+				Return to menu
 			</button>
 		</RouterLink>
-		<div class="flex items-center gap-x-8 h-80">
-			<div class="w-1/2 h-full">
+		<div class="flex flex-col sm:flex-row items-center gap-x-8 h-80">
+			<div class="w-full sm:w-1/2 h-full relative">
 				<img
 					:src="shape.image"
 					alt=""
 					class="border-2 w-full h-full object-contain"
 				/>
+				<h1
+					class="font-bold text-2xl text pl-3 pt-2 text-gray-600 absolute top-0 left-0"
+				>
+					{{ shape.label }}
+				</h1>
 			</div>
 			<form
 				@submit.prevent="calculateVolume"
-				class="w-1/2 flex flex-col max-w-xs mx-auto self-start mt-8"
+				class="w-full sm:w-1/2 flex flex-col max-w-xs mx-auto self-start mt-4"
 				ref="form"
 			>
-				<h1 class="font-bold text-xl mb-4">{{ shape.label }}</h1>
 				<div
 					v-for="(property, index) in shape.properties"
 					:key="index"
@@ -47,11 +51,11 @@
 					</select>
 				</div>
 				<button
-					class="w-full bg-blue-500 mb-4 p-1 text-white rounded hover:bg-blue-600"
+					class="w-full bg-blue-500 p-1 text-white rounded hover:bg-blue-600"
 				>
 					Calculate
 				</button>
-				<p v-if="showResult" class="font-bold text-md mb-4">
+				<p v-if="showResult" class="font-bold text-2xl mt-6">
 					Volume: {{ volume }} {{ unit }}
 				</p>
 			</form>
