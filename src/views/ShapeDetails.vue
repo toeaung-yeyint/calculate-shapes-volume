@@ -2,7 +2,7 @@
 	<IntroSection>
 		<RouterLink to="/">
 			<button
-				class="mt-20 w-full mb-12 py-2 rounded bg-gray-300 hover:bg-gray-400 text-white"
+				class="mt-20 w-full mb-12 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-700"
 			>
 				Return to menu
 			</button>
