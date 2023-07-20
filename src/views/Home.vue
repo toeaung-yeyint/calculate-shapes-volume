@@ -1,16 +1,16 @@
 <template>
-	<IntroSection>
-		<SearchBar @inputProvided="saveSearchShape" />
-		<CardContainer>
-			<Card
-				v-for="(shape, index) in filteredShape"
-				:key="index"
-				:id="shape.id"
-				:label="shape.label"
-				:image="shape.image"
-			/>
-		</CardContainer>
-	</IntroSection>
+  <IntroSection>
+    <SearchBar @inputProvided="saveSearchShape" />
+    <CardContainer>
+      <Card
+        v-for="(shape, index) in filteredShape"
+        :key="index"
+        :id="shape.id"
+        :label="shape.label"
+        :image="shape.image"
+      />
+    </CardContainer>
+  </IntroSection>
 </template>
 
 <script setup>
@@ -20,62 +20,54 @@ import Card from "../components/Card.vue";
 import SearchBar from "../components/SearchBar.vue";
 import { ref, computed } from "vue";
 
-import cone from "../assets/cone.jpg";
-import cube from "../assets/cube.jpg";
-import cuboid from "../assets/cuboid.jpg";
-import cylinder from "../assets/cylinder.jpg";
-import hexPrism from "../assets/hexagonal-prism.jpg";
-import sphere from "../assets/sphere.jpg";
-import squarePyramid from "../assets/rectangular-pyramid.jpg";
-
 const shapes = ref([
-	{
-		id: 1,
-		label: "Cone",
-		image: cone,
-	},
-	{
-		id: 2,
-		label: "Cube",
-		image: cube,
-	},
-	{
-		id: 3,
-		label: "Cuboid",
-		image: cuboid,
-	},
-	{
-		id: 4,
-		label: "Cylinder",
-		image: cylinder,
-	},
-	{
-		id: 5,
-		label: "Hexagonal Prism",
-		image: hexPrism,
-	},
-	{
-		id: 6,
-		label: "Sphere",
-		image: sphere,
-	},
-	{
-		id: 7,
-		label: "Rectangular Pyramid",
-		image: squarePyramid,
-	},
+  {
+    id: 1,
+    label: "Cone",
+    image: "/calculate-shapes-volume/src/assets/cone.jpg",
+  },
+  {
+    id: 2,
+    label: "Cube",
+    image: "/calculate-shapes-volume/src/assets/cube.jpg",
+  },
+  {
+    id: 3,
+    label: "Cuboid",
+    image: "/calculate-shapes-volume/src/assets/cuboid.jpg",
+  },
+  {
+    id: 4,
+    label: "Cylinder",
+    image: "/calculate-shapes-volume/src/assets/cylinder.jpg",
+  },
+  {
+    id: 5,
+    label: "Hexagonal Prism",
+    image: "/calculate-shapes-volume/src/assets/hexagonal-prism.jpg",
+  },
+  {
+    id: 6,
+    label: "Sphere",
+    image: "/calculate-shapes-volume/src/assets/sphere.jpg",
+  },
+  {
+    id: 7,
+    label: "Rectangular Pyramid",
+    image: "/calculate-shapes-volume/src/assets/rectangular-pyramid.jpg",
+  },
 ]);
 
 const searchShape = ref("");
 
 const saveSearchShape = (payload) => {
-	searchShape.value = payload;
+  searchShape.value = payload;
 };
 
 const filteredShape = computed(() => {
-	return shapes.value.filter((shape) => {
-		return shape.label.toLowerCase().includes(searchShape.value.toLowerCase());
-	});
+  return shapes.value.filter((shape) => {
+    return shape.label.toLowerCase().includes(searchShape.value.toLowerCase());
+  });
 });
 </script>
 
