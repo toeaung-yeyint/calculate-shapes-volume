@@ -7,12 +7,12 @@
         Return to menu
       </button>
     </RouterLink>
-    <div class="flex flex-col sm:flex-row items-center gap-x-8 h-80">
-      <div class="w-full sm:w-1/2 h-full relative">
+    <div class="flex flex-col sm:flex-row items-center gap-x-8">
+      <div class="w-full sm:w-1/2 relative">
         <img
           :src="shape.image"
           alt=""
-          class="border-2 w-full h-full object-contain"
+          class="border-2 w-full h-80 object-contain"
         />
         <h1
           class="font-bold text-2xl text pl-3 pt-2 text-gray-600 absolute top-0 left-0"
