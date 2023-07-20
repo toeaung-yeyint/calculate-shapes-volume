@@ -73,44 +73,43 @@ const shapes = ref([
   {
     id: 1,
     label: "Cone",
-    image: "/calculate-shapes-volume/src/assets/cone-details.jpg",
+    image: "/calculate-shapes-volume/assets/cone-details.jpg",
     properties: ["Height(h)", "Radius(r)"],
   },
   {
     id: 2,
     label: "Cube",
-    image: "/calculate-shapes-volume/src/assets/cube-details.jpg",
+    image: "/calculate-shapes-volume/assets/cube-details.jpg",
     properties: ["Edge(a)"],
   },
   {
     id: 3,
     label: "Cuboid",
-    image: "/calculate-shapes-volume/src/assets/cuboid-details.jpg",
+    image: "/calculate-shapes-volume/assets/cuboid-details.jpg",
     properties: ["Length(l)", "Width(w)", "Height(h)"],
   },
   {
     id: 4,
     label: "Cylinder",
-    image: "/calculate-shapes-volume/src/assets/cylinder-details.jpg",
+    image: "/calculate-shapes-volume/assets/cylinder-details.jpg",
     properties: ["Radius(r)", "Height(h)"],
   },
   {
     id: 5,
     label: "Hexagonal Prism",
-    image: "/calculate-shapes-volume/src/assets/hexagonal-prism-details.jpg",
+    image: "/calculate-shapes-volume/assets/hexagonal-prism-details.jpg",
     properties: ["Edge(a)", "Height(h)"],
   },
   {
     id: 6,
     label: "Sphere",
-    image: "/calculate-shapes-volume/src/assets/sphere-details.jpg",
+    image: "/calculate-shapes-volume/assets/sphere-details.jpg",
     properties: ["Radius(r)"],
   },
   {
     id: 7,
     label: "Rectangular Pyramid",
-    image:
-      "/calculate-shapes-volume/src/assets/rectangular-pyramid-details.jpg",
+    image: "/calculate-shapes-volume/assets/rectangular-pyramid-details.jpg",
     properties: ["Length(l)", "Width(w)", "Height(h)"],
   },
 ]);

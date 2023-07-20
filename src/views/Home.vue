@@ -24,37 +24,37 @@ const shapes = ref([
   {
     id: 1,
     label: "Cone",
-    image: "/calculate-shapes-volume/src/assets/cone.jpg",
+    image: "/calculate-shapes-volume/assets/cone.jpg",
   },
   {
     id: 2,
     label: "Cube",
-    image: "/calculate-shapes-volume/src/assets/cube.jpg",
+    image: "/calculate-shapes-volume/assets/cube.jpg",
   },
   {
     id: 3,
     label: "Cuboid",
-    image: "/calculate-shapes-volume/src/assets/cuboid.jpg",
+    image: "/calculate-shapes-volume/assets/cuboid.jpg",
   },
   {
     id: 4,
     label: "Cylinder",
-    image: "/calculate-shapes-volume/src/assets/cylinder.jpg",
+    image: "/calculate-shapes-volume/assets/cylinder.jpg",
   },
   {
     id: 5,
     label: "Hexagonal Prism",
-    image: "/calculate-shapes-volume/src/assets/hexagonal-prism.jpg",
+    image: "/calculate-shapes-volume/assets/hexagonal-prism.jpg",
   },
   {
     id: 6,
     label: "Sphere",
-    image: "/calculate-shapes-volume/src/assets/sphere.jpg",
+    image: "/calculate-shapes-volume/assets/sphere.jpg",
   },
   {
     id: 7,
     label: "Rectangular Pyramid",
-    image: "/calculate-shapes-volume/src/assets/rectangular-pyramid.jpg",
+    image: "/calculate-shapes-volume/assets/rectangular-pyramid.jpg",
   },
 ]);
 
