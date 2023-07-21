@@ -1,6 +1,6 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
-import Home from '../views/Home.vue'
-import ShapeDetails from '../views/shapeDetails.vue'
+import Home from '../views/HomeView.vue'
+import ShapeDetails from '../views/shapeDetailsView.vue'
 
 const routes = [
     {

@@ -1,8 +1,10 @@
 <template>
-  <IntroSection>
+  <div class="max-w-screen-lg mx-auto mb-16 px-4">
+    <NavigationBar />
+    <IntroSection />
     <RouterLink to="/">
       <button
-        class="mt-20 w-full mb-12 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-700"
+        class="w-full mb-12 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-700 dark:bg-gray-700 dark:hover:bg-gray-800 dark:text-white"
       >
         Return to menu
       </button>
@@ -35,14 +37,20 @@
             :id="property"
             type="number"
             step="any"
-            class="border-2 flex-grow w-9/12"
+            class="border-2 flex-grow w-9/12 px-2 dark:bg-gray-900"
             ref="itemRefs"
             required
+            placeholder="enter a number value"
           />
         </div>
         <div class="flex items-center mb-4">
           <label for="unit" class="w-5/12">Unit of measure:</label>
-          <select class="border-2" id="unit" v-model="unit" required>
+          <select
+            class="border-2 dark:bg-gray-900"
+            id="unit"
+            v-model="unit"
+            required
+          >
             <option value="">-</option>
             <option value="in³">in</option>
             <option value="ft³">ft</option>
@@ -60,11 +68,12 @@
         </p>
       </form>
     </div>
-  </IntroSection>
+  </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import NavigationBar from "../components/NavigationBar.vue";
 import IntroSection from "../components/IntroSection.vue";
 
 const props = defineProps(["id"]);
@@ -73,43 +82,43 @@ const shapes = ref([
   {
     id: 1,
     label: "Cone",
-    image: "/calculate-shapes-volume/assets/cone-details.jpg",
+    image: "/calculate-shapes-volume/assets/cone-details.png",
     properties: ["Height(h)", "Radius(r)"],
   },
   {
     id: 2,
     label: "Cube",
-    image: "/calculate-shapes-volume/assets/cube-details.jpg",
+    image: "/calculate-shapes-volume/assets/cube-details.png",
     properties: ["Edge(a)"],
   },
   {
     id: 3,
     label: "Cuboid",
-    image: "/calculate-shapes-volume/assets/cuboid-details.jpg",
+    image: "/calculate-shapes-volume/assets/cuboid-details.png",
     properties: ["Length(l)", "Width(w)", "Height(h)"],
   },
   {
     id: 4,
     label: "Cylinder",
-    image: "/calculate-shapes-volume/assets/cylinder-details.jpg",
+    image: "/calculate-shapes-volume/assets/cylinder-details.png",
     properties: ["Radius(r)", "Height(h)"],
   },
   {
     id: 5,
     label: "Hexagonal Prism",
-    image: "/calculate-shapes-volume/assets/hexagonal-prism-details.jpg",
+    image: "/calculate-shapes-volume/assets/hexagonal-prism-details.png",
     properties: ["Edge(a)", "Height(h)"],
   },
   {
     id: 6,
     label: "Sphere",
-    image: "/calculate-shapes-volume/assets/sphere-details.jpg",
+    image: "/calculate-shapes-volume/assets/sphere-details.png",
     properties: ["Radius(r)"],
   },
   {
     id: 7,
     label: "Rectangular Pyramid",
-    image: "/calculate-shapes-volume/assets/rectangular-pyramid-details.jpg",
+    image: "/calculate-shapes-volume/assets/rectangular-pyramid-details.png",
     properties: ["Length(l)", "Width(w)", "Height(h)"],
   },
 ]);
